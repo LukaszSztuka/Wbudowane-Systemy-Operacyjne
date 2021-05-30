@@ -28,6 +28,6 @@ do
      
     printf "\nWpisałeś : $userinput\n"
     echo "$userinput" > "$destdir"
-    sshpass -p '1234' scp /home/user/Pulpit/Projekt/log.txt user@10.0.2.15:/home/user/Pulpit/Projekt
+    sshpass -p 'TU_HASŁO' scp /home/user/Pulpit/Projekt/log.txt user@TU_IP:/home/user/Pulpit/Projekt # Uzupełnić hasło i IP; uwaga ta metoda jest średnio bezpieczna
 done
 $shell
