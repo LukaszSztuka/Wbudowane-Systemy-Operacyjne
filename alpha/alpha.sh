@@ -20,14 +20,14 @@ do
     done
 
     if [ $userinput == $koniec ];then 
-        echo "koniec" > "$destdir"
-        sshpass -p '1234' scp log.txt user@10.0.2.15:/home/user/Pulpit/Projekt
-        printf "\n" 
-        break; 
+        echo "koniec" > $destdir
+        sshpass -p 'HASŁO' scp /home/user/Pulpit/Projekt/log.txt user@10.0.2.15:/home/user/Pulpit/Projekt #Uzupełnić hasło i ip
+        sleep 1;
+        /sbin/shutdown -h now 
     fi 
      
     printf "\nWpisałeś : $userinput\n"
     echo "$userinput" > "$destdir"
-    sshpass -p 'TU_HASŁO' scp /home/user/Pulpit/Projekt/log.txt user@TU_IP:/home/user/Pulpit/Projekt # Uzupełnić hasło i IP; uwaga ta metoda jest średnio bezpieczna
+    sshpass -p 'HASŁO' scp /home/user/Pulpit/Projekt/log.txt user@TUTAJ_IP:/home/user/Pulpit/Projekt #Uzupełnić hasło i ip
 done
-$shell
+$SHELL
